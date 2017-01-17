@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <TextField id="textFieldA" fx:id="textFieldA" layoutX="57.0" layoutY="24.0" prefHeight="25.0" prefWidth="67.0" text="0" />
+            <TextField id="textFieldB" fx:id="textFieldB" layoutX="57.0" layoutY="63.0" prefHeight="25.0" prefWidth="67.0" text="1" />
+            <TextField id="textFieldFunction" fx:id="textFieldFunction" layoutX="300.0" layoutY="24.0" prefHeight="25.0" prefWidth="216.0" />
+            <TextField id="textFieldResult" fx:id="textFieldResult" editable="false" layoutX="384.0" layoutY="101.0" prefHeight="25.0" prefWidth="132.0" />
+            <Button id="buttonResult" fx:id="buttonResult" layoutX="300.0" layoutY="60.0" mnemonicParsing="false" onAction="#setButtonResult" prefHeight="32.0" prefWidth="67.0" text="Oblicz" />
+            <Label layoutX="38.0" layoutY="28.0" text="A" />
+            <Label layoutX="38.0" layoutY="68.0" text="B" />
+            <Label layoutX="253.0" layoutY="28.0" text="Funkcja" />
+            <Label layoutX="339.0" layoutY="105.0" text="Wynik" />
+            <LineChart fx:id="functionChart" layoutX="31.0" layoutY="138.0" prefHeight="420.0" prefWidth="529.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Button fx:id="buttonClear" layoutX="16.0" layoutY="558.0" mnemonicParsing="false" onAction="#setButtonClear" text="C" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
