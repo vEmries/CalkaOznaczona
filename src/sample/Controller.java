@@ -19,7 +19,7 @@ public class Controller {
 
 
     private double mathFunction(double x) {
-        return 2;
+        return Math.sin(x);
     }
 
     private double calculateIntegral(double A, double B, int N) {
