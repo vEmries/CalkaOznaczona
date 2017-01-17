@@ -39,6 +39,8 @@
               </yAxis>
             </LineChart>
             <Button fx:id="buttonClear" layoutX="16.0" layoutY="558.0" mnemonicParsing="false" onAction="#setButtonClear" text="C" />
+            <TextField fx:id="textFieldN" layoutX="57.0" layoutY="101.0" prefHeight="25.0" prefWidth="67.0" text="1000" />
+            <Label layoutX="37.0" layoutY="105.0" text="N" />
          </children>
       </Pane>
    </children>

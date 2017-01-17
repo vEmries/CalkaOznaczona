@@ -10,6 +10,7 @@ public class Controller {
 
     public javafx.scene.control.TextField textFieldA;
     public javafx.scene.control.TextField textFieldB;
+    public javafx.scene.control.TextField textFieldN;
     public javafx.scene.control.TextField textFieldFunction;
     public javafx.scene.control.TextField textFieldResult;
     public javafx.scene.control.Button buttonResult;
@@ -18,26 +19,25 @@ public class Controller {
 
 
     private double mathFunction(double x) {
-        return Math.sin(x);
+        return 2;
     }
 
-    private double calculateIntegral(double A, double B) {
-        double res = 0;
-        double dx = 0.001;
-
+    private double calculateIntegral(double A, double B, int N) {
         functionChart.getXAxis().setAutoRanging(true);
         functionChart.getYAxis().setAutoRanging(true);
-
         XYChart.Series dataSeries = new XYChart.Series<>();
 
-        while(A < B) {
-            res += mathFunction(A) * dx;
-            dataSeries.getData().add(new XYChart.Data<String, Double>(Double.toString(A), mathFunction(A)));
-            A += dx;
+        double H = (B - A) / N;
+        double res = 0.5 * (mathFunction(A) + mathFunction(B));
+
+        for (int i = 1; i < N; i++) {
+            double X = A + H * i;
+            res += mathFunction(X);
+            dataSeries.getData().add(new XYChart.Data<String, Double>(Double.toString(X), mathFunction(X)));
         }
 
         functionChart.getData().add(dataSeries);
-        return res;
+        return res * H;
     }
 
     private void fillChart() {
@@ -57,8 +57,9 @@ public class Controller {
     public void setButtonResult(ActionEvent e) {
         double A = Double.parseDouble(textFieldA.getText());
         double B = Double.parseDouble(textFieldB.getText());
+        int N = Integer.valueOf(textFieldN.getText());
 
-        textFieldResult.setText(String.valueOf(calculateIntegral(A, B)));
+        textFieldResult.setText(String.valueOf(calculateIntegral(A, B, N)));
 
     }
 
