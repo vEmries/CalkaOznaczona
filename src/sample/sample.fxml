@@ -23,23 +23,21 @@
          <children>
             <TextField id="textFieldA" fx:id="textFieldA" layoutX="57.0" layoutY="24.0" prefHeight="25.0" prefWidth="67.0" text="0" />
             <TextField id="textFieldB" fx:id="textFieldB" layoutX="57.0" layoutY="63.0" prefHeight="25.0" prefWidth="67.0" text="1" />
-            <TextField id="textFieldFunction" fx:id="textFieldFunction" layoutX="300.0" layoutY="24.0" prefHeight="25.0" prefWidth="216.0" />
-            <TextField id="textFieldResult" fx:id="textFieldResult" editable="false" layoutX="384.0" layoutY="101.0" prefHeight="25.0" prefWidth="132.0" />
-            <Button id="buttonResult" fx:id="buttonResult" layoutX="300.0" layoutY="60.0" mnemonicParsing="false" onAction="#setButtonResult" prefHeight="32.0" prefWidth="67.0" text="Oblicz" />
+            <TextField id="textFieldResult" fx:id="textFieldResult" editable="false" layoutX="376.0" layoutY="24.0" prefHeight="25.0" prefWidth="132.0" />
+            <Button id="buttonResult" fx:id="buttonResult" layoutX="431.0" layoutY="72.0" mnemonicParsing="false" onAction="#setButtonResult" prefHeight="32.0" prefWidth="67.0" text="Oblicz" />
             <Label layoutX="38.0" layoutY="28.0" text="A" />
             <Label layoutX="38.0" layoutY="68.0" text="B" />
-            <Label layoutX="253.0" layoutY="28.0" text="Funkcja" />
-            <Label layoutX="339.0" layoutY="105.0" text="Wynik" />
+            <Label layoutX="334.0" layoutY="28.0" text="Wynik" />
             <LineChart fx:id="functionChart" layoutX="31.0" layoutY="138.0" prefHeight="420.0" prefWidth="529.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis fx:id="yAxis" side="LEFT" />
-              </yAxis>
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="yAxis" side="LEFT" />
+               </yAxis>
             </LineChart>
             <Button fx:id="buttonClear" layoutX="16.0" layoutY="558.0" mnemonicParsing="false" onAction="#setButtonClear" text="C" />
-            <TextField fx:id="textFieldN" layoutX="57.0" layoutY="101.0" prefHeight="25.0" prefWidth="67.0" text="1000" />
+            <TextField fx:id="textFieldN" layoutX="57.0" layoutY="101.0" prefHeight="25.0" prefWidth="67.0" text="100" />
             <Label layoutX="37.0" layoutY="105.0" text="N" />
          </children>
       </Pane>
